@@ -1,0 +1,10 @@
+.image{
+  text-align: center;
+  background-color: #fff;
+  padding: 50rpx 0;
+}
+.image .bannerimage {
+  width: 300rpx;
+  border-radius: 20rpx;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}

@@ -1,0 +1,18 @@
+<view wx:for="{{res}}" bindtap="todetail" data-index="{{item._id}}" class="flex margin-lr-sm padding-tb solid-bottom justify-start">
+
+<image style="height: 220rpx; width: 160rpx;" class="bg-img radius margin-lr-xs" src="{{item.image}}" mode="" />
+<view class="text-black margin-left-sm" style="width: 420rpx;">
+  <view class="text-left margin-top-sm">
+    <text class="text-lg text-black text-bold">{{item.name}}</text>
+  </view>
+  <view class="text-left margin-top-xs">
+    <text class="text-black">{{item.author}}</text>
+  </view>
+  <view class="text-left margin-top-sm">
+    <text class="text-black">{{item.type}}</text>
+  </view>
+</view>
+<view class="margin-left-sm text-xl flex justify-center align-center" style="width: 40rpx;">
+  <view class="cuIcon"></view>
+</view>
+</view>

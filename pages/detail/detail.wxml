@@ -1,0 +1,91 @@
+<view class="margin-xs">
+
+  <view class="bg-white radius-lg" style="min-height: 90vh;">
+    <view class="flex padding-xs justify-between">
+      <view class="flex">
+        <view class="padding-right-sm text-xl padding-top-xs">
+          <text class="cuIcon text-black"></text>
+        </view>
+      </view>
+      <view class="flex">
+        <view class="padding-tb-xs text-lg text-black">
+          <view>{{res.name}}</view>
+        </view>
+      </view>
+      <view class="flex text-xxl">
+        <view class="cuIcon-forward text-black padding-top-xs"></view>
+      </view>
+    </view>
+    <view class='image' bindtap="viewimg" data-value="{{res.image}}">
+      <image mode="widthFix" class="bannerimage" src='{{res.image}}'></image>
+    </view>
+    <view class="flex margin-lr-sm padding-tb justify-start">
+      <!-- <image style="height: 220rpx; width: 160rpx;" class="bg-img radius margin-lr-xs" src="{{res.image}}" mode="" /> -->
+      <view class="text-black margin-left-sm" style="width: 480rpx;">
+        <!-- <view class="text-right">
+          <view class="cu-avatar round bg-black">書</view>
+        </view> -->
+        <!-- <view class="text-left margin-top-sm">
+          <text class="text-xl text-black text-bold">{{res.name}}</text>
+        </view>
+        <view class="text-left margin-top-xs">
+          <text class="text-black">你多才多艺却一事无成的人生，需要一份才华战略来拯救！</text>
+        </view> -->
+      </view>
+    </view>
+    <view class="padding-tb solid-bottom">
+      <view class="flex text-center bg-white">
+        <view class="flex flex-sub flex-column">
+          <view class="text-l text-black text-bold">{{res.author}}</view>
+          <view class="margin-top-xs text-sm text-gray">作者</view>
+        </view>
+        <view class="flex flex-sub flex-column">
+          <view class="text-l text-black text-bold">{{res.time}}</view>
+          <view class="margin-top-xs text-sm text-gray">出版时间</view>
+        </view>
+        <view class="flex flex-sub flex-column">
+          <view class="text-l text-black text-bold">{{res.publish}}</view>
+          <view class="margin-top-xs text-sm text-gray">出版社</view>
+        </view>
+      
+        <view class="flex flex-sub flex-column">
+          <view class="text-l text-black text-bold">{{res.stock}}本</view>
+          <view class="margin-top-xs text-sm text-gray">库存数量</view>
+        </view>
+      </view>
+    </view>
+    <view class="margin-tb-sm margin-left text-black text-bold text-lg">类型</view>
+    <view class="cu-list menu margin-tb-lg padding-bottom solid-bottom">
+      <view class="cu-item arrow" style="height: 120rpx;">
+        <view class="content">
+          <text class="text-black text-bold padding-lr-sm">{{res.type}}</text>
+        </view>
+      </view>
+    </view>
+     <view class="margin-tb-sm margin-left text-black text-bold text-lg">馆藏位置</view>
+    <view class="cu-list menu margin-tb-lg padding-bottom solid-bottom">
+      <view class="cu-item " style="height: 120rpx;">
+        <view class="content">
+          <text class="text-red text-bold padding-lr-sm">{{res.pos}}</text>
+        </view>
+      </view>
+    </view>
+    <!-- <view class="cu-list menu margin-tb-lg padding-bottom solid-bottom">
+      <view class="cu-item arrow" style="height: 120rpx;">
+        <view class="content">
+          <view class="icon-plant text-black text-bold">
+            <text class="text-black text-bold padding-lr-sm">免费试读</text>
+          </view>
+        </view>
+      </view>
+    </view> -->
+    <view class="margin-tb-xs margin-left text-black text-bold text-lg">简介</view>
+    <view class="margin padding-bottom" style="line-height: 48rpx;">
+      {{res.brief}}
+    </view>
+    <view class="margin-tb-xs margin-left text-black text-bold text-lg">作者简介</view>
+    <view class="margin padding-bottom" style="line-height: 48rpx;">
+      {{res.authorbrief}}
+    </view>
+  </view>
+</view>

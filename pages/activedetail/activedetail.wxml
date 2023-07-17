@@ -1,0 +1,27 @@
+<view bindtap="todetail" data-index="{{res._id}}" wx:if="{{!res.isend}}" class="cu-timeline margin radius-lg">
+    <view class="padding-sm text-lg margin-top-sm">
+        <view class="bg-white margin-tb-sm">
+            <image class="bg-img radius" style="height: 360rpx;" src="{{res.image}}" mode="" />
+        </view>
+        <text class="text-bold text-black">
+            <!-- 内容 -->
+            {{res.name}}
+        </text>
+        <text class=" text-bold text-black">
+            <!-- 内容 -->
+            活动时间：{{res.starttime}}-{{res.endtime}}
+        </text>
+        <text class=" text-bold text-black">
+            <!-- 内容 -->
+            活动地点：{{res.pos}}
+        </text>
+        <text class=" text-bold text-black">
+            <!-- 内容 -->
+            活动内容：{{res.content}}
+        </text>
+    </view>
+
+
+
+
+</view>

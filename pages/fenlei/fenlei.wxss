@@ -1,0 +1,8 @@
+.test{
+    --sidebar-default-color: #f2f3f5;
+}
+.my-button {
+    --button-border-radius: 10px;
+    --button-default-color: #2e60c5;
+  }
+  

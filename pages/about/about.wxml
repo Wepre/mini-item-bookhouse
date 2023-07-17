@@ -1,0 +1,10 @@
+<view class="margin padding bg-white radius-lg">
+    <view class="flex justify-between">
+      <view class="text-black">操作说明</view>
+    </view>
+    <view class="padding-tb">
+      <view class="text-sm">1、这里可以显示内容</view>
+      <view class="text-sm padding-tb-xs">2、点击抽屉右侧空白区域或右下键箭头标志，返回主页面</view>
+      <view class="text-sm">3、可用于展示商品大类、个人信息等场景</view>
+    </view>
+  </view>

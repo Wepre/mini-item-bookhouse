@@ -1,0 +1,54 @@
+<van-tabs active="{{ active }}" bind:change="onChange">
+    <van-tab title="进行中">
+        <view wx:for="{{res}}" bindtap="todetail" data-index="{{item._id}}" wx:if="{{!item.isend}}" class="cu-timeline margin radius-lg">
+            <view class="padding-sm text-lg margin-top-sm">
+                <view class="bg-white margin-tb-sm">
+                    <image class="bg-img radius" style="height: 360rpx;" src="{{item.image}}" mode="" />
+                </view>
+                <text class="text-bold text-black">
+                    <!-- 内容 -->
+                    {{item.name}}
+                </text>
+                <text class=" text-black text-sm">
+                    <!-- 内容 -->
+                    活动时间：{{item.starttime}}-{{item.endtime}}
+                </text>
+                <text class=" text-black text-sm">
+                    <!-- 内容 -->
+                    活动地点：{{item.pos}}
+                </text>
+            </view>
+
+
+
+
+        </view>
+    </van-tab>
+    <van-tab title="往期活动">
+
+        <view wx:for="{{res}}" bindtap="todetail" data-index="{{item._id}}" wx:if="{{item.isend}}" class="cu-timeline margin radius-lg">
+    <view class="padding-sm text-lg margin-top-sm">
+        <view class="bg-white margin-tb-sm">
+            <image class="bg-img radius" style="height: 360rpx;" src="{{item.image}}" mode="" />
+        </view>
+        <text class="text-bold text-black">
+            <!-- 内容 -->
+            {{item.name}}
+        </text>
+        <text class=" text-black text-sm">
+            <!-- 内容 -->
+            活动时间：{{item.starttime}}-{{item.endtime}}
+        </text>
+        <text class=" text-black text-sm">
+            <!-- 内容 -->
+            活动地点：{{item.pos}}
+        </text>
+    </view>
+
+
+
+
+</view>
+    </van-tab>
+
+</van-tabs>
