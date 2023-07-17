@@ -5,22 +5,46 @@ Page({
     swiper: [],active:'0',
     iconList: [{
       icon: 'moneybagfill',
-      color: 'blue',
+      color: 'green',
       badge: 0,
       name: '图书分类'
     }, {
       icon: 'shopfill',
-      color: 'red',
+      color: 'green',
       badge: 0,
       name: '书屋介绍',
       bindtap: "bindZan"
     }, {
       icon: 'formfill',
-      color: 'purple',
+      color: 'green',
       badge: 0,
       name: '我要留言',
       bindtap: "showResource"
     }, {
+        icon: 'formfill',
+        color: 'green',
+        badge: 0,
+        name: '换书',
+        bindtap: "showResource"
+      },  {
+        icon: 'formfill',
+        color: 'green',
+        badge: 0,
+        name: '艺术鉴赏',
+        bindtap: "showResource"
+      },  {
+        icon: 'formfill',
+        color: 'green',
+        badge: 0,
+        name: '交流会共享',
+        bindtap: "showResource"
+      },  {
+        icon: 'formfill',
+        color: 'green',
+        badge: 0,
+        name: '读书心得',
+        bindtap: "showResource"
+      },  {
       icon: 'timefill',
       color: 'green',
       badge: 0,
@@ -77,6 +101,12 @@ Page({
 
   },
   onShow() {
+    var msg=wx.getStorageSync('msg')
+    if (!msg) {
+        wx.navigateTo({
+          url: '../login/login',
+        })
+    }
     // 不分页了，直接上
     wx.showLoading({
       title: '正在加载',

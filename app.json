@@ -2,6 +2,12 @@
     "pages": [
         "pages/index/index",
         "pages/fenlei/fenlei",
+        "pages/xinde/xindelist/xindelist",
+        "pages/xinde/addxinde/addxinde",
+        "pages/xinde/myxinde/myxinde", 
+        "pages/huanshu/huanshulist/huanshulist",
+        "pages/huanshu/addhuanshu/addhuanshu",
+        "pages/huanshu/myhuanshu/myhuanshu", 
         "pages/alter/alter",
         "pages/activesearch/activesearch",
         "pages/advice/advice",
@@ -28,13 +34,13 @@
     "window": {
         "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#fff",
-        "navigationBarTitleText": "海大愛心书屋",
+        "navigationBarTitleText": "梁希书屋",
         "navigationBarTextStyle": "black"
     },
     "style": "v2",
     "sitemapLocation": "sitemap.json",
     "tabBar": {
-        "selectedColor": "#3a8aed",
+        "selectedColor": "green",
         "list": [{
                 "pagePath": "pages/index/index",
                 "text": "首页",
@@ -64,7 +70,8 @@
         "van-sidebar": "@vant/weapp/sidebar/index",
         "van-button": "@vant/weapp/button/index",
         "van-tab": "@vant/weapp/tab/index",
-        "van-tabs": "@vant/weapp/tabs/index","van-tab": "@vant/weapp/tab/index",
+        "van-tabs": "@vant/weapp/tabs/index",
+        "van-tab": "@vant/weapp/tab/index",
         "van-tabs": "@vant/weapp/tabs/index",
         "van-sidebar-item": "@vant/weapp/sidebar-item/index"
     }
