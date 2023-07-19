@@ -1,66 +1,67 @@
-// pages/huanshu/addhuanshu/addhuanshu.js
+const db = wx.cloud.database();
+const _ = db.command;
 Page({
+    data: {
 
-  /**
-   * 页面的初始数据
-   */
-  data: {
+    },
+    onLoad() {
 
-  },
+    },
+    onShow() {
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad(options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
-  }
+    },
+    getNowDate: function () {
+        var date = new Date();
+        var year = date.getFullYear() //年
+        var month = date.getMonth() + 1 //月
+        var day = date.getDate() //日
+        var hour = date.getHours() //时
+        var minute = date.getMinutes() //分
+        var second = date.getSeconds() //秒
+        var xiaoshi = "";
+        if (hour < 10) {
+            xiaoshi = "0" + hour;
+        } else {
+            xiaoshi = hour + "";
+        }
+        var fenzhong = "";
+        if (minute < 10) {
+            fenzhong = "0" + minute;
+        } else {
+            fenzhong = minute + "";
+        }
+        var miao = "";
+        if (second < 10) {
+            miao = "0" + second;
+        } else {
+            miao = second + "";
+        }
+        var time = year + '-' + month + '-' + day + ' ' + xiaoshi + ':' + fenzhong + ':' + miao
+        return time
+    },
+    submit(e) {
+        console.log(e);
+        var form = e.detail.value
+        var msg=wx.getStorageSync('msg')
+        var loginId=wx.getStorageSync('loginId')
+        db.collection('huanshuList').add({
+            data: {
+                ...form,
+                time: this.getNowDate(),
+                ...msg,
+                loginId:loginId
+            }
+        }).then(res => {
+            console.log(res)
+            wx.showToast({
+                title: '添加成功',
+            })
+            wx.navigateBack({
+              delta: 1,
+              success: (res) => {},
+              fail: (res) => {},
+              complete: (res) => {},
+            })
+        })
+    }
 })

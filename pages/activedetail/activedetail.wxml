@@ -1,4 +1,4 @@
-<view bindtap="todetail" data-index="{{res._id}}" wx:if="{{!res.isend}}" class="cu-timeline margin radius-lg">
+<view bindtap="todetail" data-index="{{res._id}}" wx:if="{{res.isend}}" class="cu-timeline margin radius-lg">
     <view class="padding-sm text-lg margin-top-sm">
         <view class="bg-white margin-tb-sm">
             <image class="bg-img radius" style="height: 360rpx;" src="{{res.image}}" mode="" />

@@ -1,0 +1,15 @@
+<view class="padding-tb-sm flex justify-center" style="background-color: #7beeab; width: 750rpx; height: {{windowHeight}}rpx; display: flex; box-sizing: border-box">
+    <view class="cu-coupon-card7">
+        <view class="cu-coupon-top">
+            <view class="cu-coupon-title">
+                <span></span>
+                <text>欢迎来到梁希书屋</text>
+                <span></span>
+            </view>
+            <!-- 这里添加内容 -->
+            1
+        </view>
+        
+        <view class="bottom"></view>
+    </view>
+</view>

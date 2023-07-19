@@ -1,4 +1,6 @@
 // pages/alter/alter.js
+const db = wx.cloud.database();
+const _ = db.command;
 Page({
 
     /**
@@ -9,12 +11,18 @@ Page({
     data: {
         imgList: [],
         imgUrl: [],
-        
+
     },
-    onShow(){
-this.setData({
-    res: wx.getStorageSync('msg')
-})
+    onShow() {
+        var loginId=wx.getStorageSync('loginId')
+         db.collection('userList').doc(loginId).get().then(res => {
+              console.log(res)
+              this.setData({
+                res: res.data,
+                imgUrl: [res.data.image]
+              })
+            })
+        
     },
     ChooseImage() {
         wx.chooseImage({
@@ -166,6 +174,7 @@ this.setData({
     },
     submit(e) {
         console.log(e)
+        var loginId = wx.getStorageSync('loginId')
         var form = e.detail.value
         var name = form.name
         var phone = form.phone
@@ -180,8 +189,20 @@ this.setData({
             name,
             phone,
             image,
+
         }
+        db.collection('userList').doc(loginId).update({
+            data: {
+                ...res
+            }
+        }).then(res => {
+            console.log(res)
+            wx.showToast({
+                title: '修改成功',
+            })
+        })
         wx.setStorageSync('msg', res)
+
         wx.showToast({
             title: '修改成功,即将返回',
         })

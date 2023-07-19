@@ -1,66 +1,39 @@
-// pages/xinde/xindelist/xindelist.js
+const db=wx.cloud.database();
+const _=db.command;
 Page({
+    data:{
 
-  /**
-   * 页面的初始数据
-   */
-  data: {
+    },
+    onLoad(){
 
-  },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad(options) {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload() {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh() {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage() {
-
-  }
+    },
+    todetail(e){
+        console.log(e);
+        
+        var id=e.currentTarget.dataset.id
+        wx.navigateTo({
+          url: '../xindedetail/xindedetail?id='+id,
+        })
+    },
+    navi(){
+        wx.navigateTo({
+          url: '../addxinde/addxinde',
+        })
+    },
+    onShow() {
+        this.setData({
+            msg:wx.getStorageSync('msg')
+        })
+        wx.cloud.callFunction({
+            name: "getdata",
+            data: {
+                dbname: 'xindeList'
+            }
+        }).then(res => {
+            console.log(res)
+            this.setData({
+                res: res.result.data.reverse()
+            })
+        })
+    }
 })

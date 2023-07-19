@@ -1,11 +1,16 @@
 {
     "pages": [
+        "pages/start/start",
+        "pages/yishu/yishu",
         "pages/index/index",
+        "pages/yishu/detail",
         "pages/fenlei/fenlei",
         "pages/xinde/xindelist/xindelist",
+        "pages/xinde/xindedetail/xindedetail",
         "pages/xinde/addxinde/addxinde",
         "pages/xinde/myxinde/myxinde", 
         "pages/huanshu/huanshulist/huanshulist",
+        "pages/huanshu/huanshudetail/huanshudetail",
         "pages/huanshu/addhuanshu/addhuanshu",
         "pages/huanshu/myhuanshu/myhuanshu", 
         "pages/alter/alter",
@@ -33,7 +38,7 @@
 
     "window": {
         "backgroundTextStyle": "light",
-        "navigationBarBackgroundColor": "#fff",
+        "navigationBarBackgroundColor": "#7beeab",
         "navigationBarTitleText": "梁希书屋",
         "navigationBarTextStyle": "black"
     },

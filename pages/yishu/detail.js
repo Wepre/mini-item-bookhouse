@@ -1,0 +1,19 @@
+Page({
+    data:{
+      res:[]
+    },
+    onLoad(options){
+        wx.cloud.callFunction({
+            name:"getdatabyid",
+            data:{
+                dbname:'yishuList',
+                id:options.id
+            }
+          }).then(res=>{
+            console.log(res)
+            this.setData({
+              res:res.result.data
+            })
+          })
+    }
+  })

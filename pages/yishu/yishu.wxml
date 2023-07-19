@@ -1,21 +1,6 @@
-<view class="box-serach">
-    <view class="cu-bar search bg-white radius-lg">
-        <view class="action text-black">
-            <text>活动</text>
-            <text class="cuIcon-triangledownfill"></text>
-        </view>
-        <view class="search-form round">
-            <text class="cuIcon-search"></text>
-            <input type="text" placeholder="搜索相关" bindconfirm="search" confirm-type="search"></input>
-        </view>
-        <view class="flex padding-sm text-xxl text-black">
-            <text class="cuIcon-message"></text>
-        </view>
-    </view>
-</view>
 <van-tabs active="{{ active }}" bind:change="onChange">
-    <van-tab title="进行中">
-        <view wx:for="{{res}}" bindtap="todetail" data-index="{{item._id}}" wx:if="{{!item.isend}}" class="cu-timeline margin radius-lg">
+    <van-tab title="音乐">
+        <view wx:for="{{res}}" bindtap="todetail" data-index="{{item._id}}" wx:if="{{item.type=='音乐'}}" class="cu-timeline margin radius-lg">
             <view class="padding-sm text-lg margin-top-sm">
                 <view class="bg-white margin-tb-sm">
                     <image class="bg-img radius" style="height: 360rpx;" src="{{item.image}}" mode="" />
@@ -26,11 +11,14 @@
                 </text>
                 <text class=" text-black text-sm">
                     <!-- 内容 -->
-                    活动时间：{{item.starttime}}-{{item.endtime}}
+                    简介：{{item.brief}}
                 </text>
                 <text class=" text-black text-sm">
                     <!-- 内容 -->
                     活动地点：{{item.pos}}
+                </text><text class=" text-black text-sm">
+                    <!-- 内容 -->
+                    活动时间：{{item.date}}
                 </text>
             </view>
 
@@ -39,9 +27,9 @@
 
         </view>
     </van-tab>
-    <van-tab title="往期活动">
+    <van-tab title="绘画">
 
-        <view wx:for="{{res}}" bindtap="todetail" data-index="{{item._id}}" wx:if="{{item.isend}}" class="cu-timeline margin radius-lg">
+        <view wx:for="{{res}}" bindtap="todetail" data-index="{{item._id}}" wx:if="{{item.type=='绘画'}}" class="cu-timeline margin radius-lg">
             <view class="padding-sm text-lg margin-top-sm">
                 <view class="bg-white margin-tb-sm">
                     <image class="bg-img radius" style="height: 360rpx;" src="{{item.image}}" mode="" />
@@ -52,11 +40,14 @@
                 </text>
                 <text class=" text-black text-sm">
                     <!-- 内容 -->
-                    活动时间：{{item.starttime}}-{{item.endtime}}
+                    简介：{{item.brief}}
                 </text>
                 <text class=" text-black text-sm">
                     <!-- 内容 -->
                     活动地点：{{item.pos}}
+                </text><text class=" text-black text-sm">
+                    <!-- 内容 -->
+                    活动时间：{{item.date}}
                 </text>
             </view>
 

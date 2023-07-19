@@ -36,7 +36,7 @@ Page({
         icon: 'formfill',
         color: 'green',
         badge: 0,
-        name: '交流会共享',
+        name: '查看活动',
         bindtap: "showResource"
       },  {
         icon: 'formfill',
@@ -67,6 +67,25 @@ Page({
         wx.navigateTo({
           url:'../advice/advice'
         })
+    }else if(name=='换书') {
+        wx.navigateTo({
+          url:'../huanshu/huanshulist/huanshulist'
+        })
+    }else if(name=='艺术鉴赏') {
+        // 艺术鉴赏
+        wx.navigateTo({
+          url: '../yishu/yishu',
+        })
+        
+    }else if(name=='查看活动') {
+        wx.switchTab({
+          url: '../active/active',
+        })
+
+    }else if(name=='读书心得') {
+        wx.navigateTo({
+            url:'../xinde/xindelist/xindelist'
+          })
     }else{
         wx.showToast({
           title: '敬请期待',

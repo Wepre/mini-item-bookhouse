@@ -1,43 +1,43 @@
 Page({
-    data:{
-      goods:[],
-      res:[],
-      nowtime:''
+    data: {
+        goods: [],
+        res: [],
+        nowtime: ''
     },
-    search(e){
+    search(e) {
         console.log(e)
         wx.navigateTo({
-          url: '../activesearch/activesearch?id='+e.detail.value,
+            url: '../activesearch/activesearch?id=' + e.detail.value,
         })
-      }   ,
-    onLoad(){
+    },
+    onLoad() {
         wx.showLoading({
-          title: '正在加载',
+            title: '正在加载',
         })
         this.setData({
-            nowtime:this.getNowDate()
+            nowtime: this.getNowDate()
         })
         wx.cloud.callFunction({
-            name:"getdata",
-            data:{
-                dbname:'activeList'
+            name: "getdata",
+            data: {
+                dbname: 'activeList'
             }
-          }).then(res=>{ 
+        }).then(res => {
             console.log(res)
             this.setData({
-              res:res.result.data.reverse()
+                res: res.result.data.reverse()
             })
             wx.hideLoading()
-            
-          })
-    } ,
-    todetail(e){
-        console.log(e)
-        var id=e.currentTarget.dataset.index
-        wx.navigateTo({
-          url: '../activedetail/activedetail?id='+id,
+
         })
-      },
+    },
+    todetail(e) {
+        console.log(e)
+        var id = e.currentTarget.dataset.index
+        wx.navigateTo({
+            url: '../activedetail/activedetail?id=' + id,
+        })
+    },
     getNowDate: function () {
         var date = new Date();
         var year = date.getFullYear() //年
@@ -48,24 +48,24 @@ Page({
         var second = date.getSeconds() //秒
         var xiaoshi = "";
         if (hour < 10) {
-          xiaoshi = "0" + hour;
+            xiaoshi = "0" + hour;
         } else {
-          xiaoshi = hour + "";
+            xiaoshi = hour + "";
         }
         var fenzhong = "";
         if (minute < 10) {
-          fenzhong = "0" + minute;
+            fenzhong = "0" + minute;
         } else {
-          fenzhong = minute + "";
+            fenzhong = minute + "";
         }
         var miao = "";
         if (second < 10) {
-          miao = "0" + second;
+            miao = "0" + second;
         } else {
-          miao = second + "";
+            miao = second + "";
         }
         var time = year + '-' + month + '-' + day + ' ' + xiaoshi + ':' + fenzhong + ':' + miao
         return time
-      },
-  
-  })
+    },
+
+})

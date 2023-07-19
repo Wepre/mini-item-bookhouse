@@ -1,2 +1,44 @@
-<!--pages/huanshu/huanshulist/huanshulist.wxml-->
-<text>pages/huanshu/huanshulist/huanshulist.wxml</text>
+<view class="scrollPage">
+    <view class="bg-white margin-xs radius-lg">
+
+        <view class="cu-bar">
+            <view class="text-black text-xxl padding-lr-sm">
+                换书列表(点击可跳转)
+            </view>
+        </view>
+
+
+        <view wx:for="{{res}}" class="cu-list menu-avatar no-padding padding-bottom">
+            <view class="cu-item">
+                <image class="cu-avatar round lg" style="" src="{{item.image}}" mode="" />
+                <view class="content" bindtap="todetail" data-id="{{item._id}}">
+                    <view class="text-lg text-bold">
+                        {{item.name}}
+                    </view>
+                    <view class="text-gray text-sm">
+                        {{item.time}}
+                    </view>
+                </view>
+                <view class="action text-xxl text-black">
+                    <view class="cuIcon-appreciate"><text class="text-gray text-lg"> {{item.bookname.length}}</text></view>
+                </view>
+                <view class="action text-xxl text-black">
+                    <view class="cuIcon-comment"></view>
+                </view>
+            </view>
+            <view class="margin-left padding-left-xl text-black" bindtap="todetail" data-id="{{item._id}}">
+                <view class="margin-lr padding-left">
+                    <text>书名：{{item.bookname}},详细内容：{{item.bookdetail}}</text>
+                </view>
+            </view>
+        </view>
+
+    </view>
+</view>
+<view style="height: 200rpx;"></view>
+
+<view class="cu-bar foot input {{InputBottom!=0?'cur':''}}" style="bottom:{{InputBottom}}px">
+    <button class="cu-btn block bg-green  margin-tb-sm lg" bindtap="navi">新增</button>
+
+
+</view>

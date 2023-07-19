@@ -1,0 +1,31 @@
+<form bindsubmit="submit">
+    <view class="cu-bar bg-white">
+        <view class="action">
+            <text class="cuIcon-titles text-blue"></text>
+            <text class="text-bold">心得详情</text>
+        </view>
+    </view>
+    <view class="cu-form-group">
+        <view class="title">书名</view>
+        <input placeholder="请输入书名" name='bookname' value="{{res.bookname}}" disabled="{{true}}"></input>
+    </view>
+    <view class="cu-form-group align-start margin-top-sm">
+        <view class="title">详细内容</view>
+        <textarea   value="{{res.bookdetail}}" name='test' ></textarea >
+    </view> 
+    <view class="cu-form-group align-start margin-top-sm">
+        <view class="title">留言详情</view>
+        <textarea  value="{{res.content}}" name='test' ></textarea>
+    </view>
+    <view class="cu-form-group">
+        <view class="title">上传时间</view>
+        <input placeholder="请输入上传时间" disabled="{{true}}" name='phonenum' value="{{res.time}}"></input>
+    </view>
+    <view class="cu-form-group">
+        <view class="title">上传人</view>
+        <input placeholder="请输入上传时间" disabled="{{true}}" name='phonenum' value="{{res.name}}"></input>
+    </view>
+    <!-- <view class="padding flex flex-column bg-white  radius-lg">
+        <button class="cu-btn bg-blue margin-tb-sm lg" form-type="submit">上传</button>
+    </view> -->
+</form>
